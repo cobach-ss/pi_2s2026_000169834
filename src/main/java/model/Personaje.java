@@ -20,6 +20,10 @@ public class Personaje {
         }
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public void setNivelPoder(int nivel) {
         this.nivelPoder = nivel;
     }
@@ -45,6 +49,19 @@ public class Personaje {
 
     public String[] getHabilidad() {
         return habilidades;
+    }
+    public String mostrarInformacion() {
+        String info = "ID: " + id + "\n";
+        info += "Nombre: " + nombre + "\n";
+        info += "Arma: " + arma + "\n";
+        info += "Nivel de Poder: " + nivelPoder + "\n";
+        info += "Habilidades:\n";
+        for (int i = 0; i < habilidades.length; i++) {
+            if (habilidades[i] != null) {
+                info += "  " + (i + 1) + ". " + habilidades[i] + "\n";
+            }
+        }
+        return info;
     }
 
 
